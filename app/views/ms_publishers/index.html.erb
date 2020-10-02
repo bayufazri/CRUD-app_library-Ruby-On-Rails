@@ -1,0 +1,31 @@
+<h1>MsPublishers#index</h1>
+<p>Find me in app/views/ms_publishers/index.html.erb</p>
+
+
+<%= link_to "New Publisher", new_ms_publisher_path %>
+<table class="table">
+
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <th colspan="2">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+    <% @ms_publishers.each.with_index(1) do | ms_publisher, index | %>
+
+    <tr>
+        <td><%= index %></td>
+        <td><%= ms_publisher.name %></td>
+        <td><%= ms_publisher.phone %></td>
+        <td><%= ms_publisher.address %></td>
+        <td><%= link_to "Show", ms_publisher_path(ms_publisher) %></td>
+        <td><%= link_to "Edit", edit_ms_publisher_path(ms_publisher) %></td>
+        <td><%= link_to "Delete", ms_publisher_path(ms_publisher),method: :delete, data: {confirm: 'Data Dihapus ? '}%></td> 
+    </tr>
+<% end %>
+</tbody>
+</table>

@@ -1,0 +1,34 @@
+<h1>MsMembers#index</h1>
+<p>Find me in app/views/ms_members/index.html.erb</p>
+
+<%= link_to "New Member", new_ms_member_path %>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Address</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th colspan="2">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+    <% @ms_members.each.with_index(1) do | ms_member, index | %>
+
+    <tr>
+        <td><%= index %></td>
+        <td><%= ms_member.name %></td>
+        <td><%= ms_member.age %></td>
+        <td><%= ms_member.address %></td>
+        <td><%= ms_member.phone %></td>
+        <td><%= ms_member.email %></td>
+        <td><%= link_to "Show", ms_member_path(ms_member) %></td>
+        <td><%= link_to "Edit", edit_ms_member_path(ms_member) %></td>
+        <td><%= link_to "Delete", ms_member_path(ms_member),method: :delete, data: {confirm: 'Data Dihapus ? '}%></td> 
+    </tr>
+<% end %>
+</tbody>
+</table>

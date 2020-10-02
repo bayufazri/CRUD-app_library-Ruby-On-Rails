@@ -1,0 +1,11 @@
+<h1>MsBooks#new</h1>
+<p>Find me in app/views/ms_books/new.html.erb</p>
+
+<%= form_for @ms_book do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.label :publisher_id %>
+    <%= f.text_field :ms_publisher_id %>
+    <%= f.submit :save%>
+
+    <% end %>

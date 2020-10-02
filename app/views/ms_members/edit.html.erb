@@ -1,0 +1,17 @@
+<h1>MsMembers#edit</h1>
+<p>Find me in app/views/ms_members/edit.html.erb</p>
+
+<%= form_for @ms_member do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.label :age %>
+    <%= f.text_field :age %>
+    <%= f.label :address %>
+    <%= f.text_field :address %>
+    <%= f.label :phone %>
+    <%= f.text_field :phone %>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+    <%= f.submit :save%>
+
+    <% end %>

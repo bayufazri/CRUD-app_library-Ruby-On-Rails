@@ -1,0 +1,33 @@
+<h1>TrLoans#index</h1>
+<p>Find me in app/views/tr_loans/index.html.erb</p>
+
+<%= link_to "New Loan", new_tr_loan_path %>
+
+<table class="table">
+
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Member name</th>
+            <th>Member phone</th>
+            <th>Member email</th>
+            <th>Ms book id</th>
+            <th colspan="2">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+    <% @tr_loans.each.with_index(1) do | tr_loan, index | %>
+
+    <tr>
+        <td><%= index %></td>
+        <td><%= tr_loan.member_name %></td>
+        <td><%= tr_loan.member_phone %></td>
+        <td><%= tr_loan.member_email %></td>
+        <td><%= tr_loan.ms_book_id %></td>
+        <td><%= link_to "Show", tr_loan_path(tr_loan) %></td>
+        <td><%= link_to "Edit", edit_tr_loan_path(tr_loan) %></td>
+        <td><%= link_to "Delete", tr_loan_path(tr_loan),method: :delete, data: {confirm: 'Data Dihapus ? '}%></td> 
+    </tr>
+<% end %>
+</tbody>
+</table>
